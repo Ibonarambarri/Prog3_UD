@@ -1,4 +1,4 @@
-package Cochecoche;
+package Entrega0.ChocheChoche.src.Cochecoche;
 
 import javax.swing.JFrame;
 
