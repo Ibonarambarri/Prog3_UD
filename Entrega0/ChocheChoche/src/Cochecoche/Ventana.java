@@ -3,14 +3,11 @@ package Entrega0.ChocheChoche.src.Cochecoche;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
 public class Ventana extends JFrame {
-
-    private BufferedImage imagen;
 
     public Ventana(Coche coche) {
         setSize(1000, 750);
