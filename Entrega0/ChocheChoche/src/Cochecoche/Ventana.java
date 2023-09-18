@@ -9,6 +9,8 @@ import java.net.URL;
 
 public class Ventana extends JFrame {
 
+    private BufferedImage imagen;
+
     public Ventana(Coche coche) {
         setSize(1000, 750);
         setLocationRelativeTo(null);
