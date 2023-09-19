@@ -1,15 +1,10 @@
-package Entrega0.ChocheChoche.src.Cochecoche;
+package Cochecoche;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.net.URL;
 
 public class Ventana extends JFrame {
-
-    private BufferedImage imagen;
 
     public Ventana(Coche coche) {
         setSize(1000, 750);
@@ -17,7 +12,7 @@ public class Ventana extends JFrame {
         JPanel buttP = new JPanel();
         JPanel mainP = new JPanel();
         
-        mainP.setLayout(null);
+        //mainP.setLayout(null);
         buttP.setBackground(Color.GRAY);
 
         getContentPane().add(mainP, BorderLayout.NORTH);
@@ -30,11 +25,13 @@ public class Ventana extends JFrame {
         
         URL coche_url = getClass().getResource("coche.png");
         ImageIcon coche_icon = new ImageIcon(coche_url);
+        Image coche_reesc = coche_icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        coche_icon = new ImageIcon(coche_reesc);
         JLabel cocheL = new JLabel(coche_icon);
         
         mainP.add(cocheL);
         
-        cocheL.setBounds(-3000, 1, 100, 100);
+        cocheL.setBounds(0, 0, 100, 100);
         
         buttP.setLayout(new FlowLayout(FlowLayout.CENTER));
         buttP.add(acelB);
@@ -42,16 +39,9 @@ public class Ventana extends JFrame {
         buttP.add(izqB);
         buttP.add(derB);
 
-        try {
-            imagen = ImageIO.read(getClass().getResource("coche.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        acelB.addActionListener(e -> coche.incrementVelocidad());
 
-
-        acelB.addActionListener(e -> {coche.incrementVelocidad();});
-
-        decelB.addActionListener(e -> {coche.desincrementVelocidad();});
+        decelB.addActionListener(e -> coche.desincrementVelocidad());
 
         izqB.addActionListener(e -> coche.incrementAngulo());
 

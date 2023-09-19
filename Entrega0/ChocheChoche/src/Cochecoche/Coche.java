@@ -1,4 +1,4 @@
-package Entrega0.ChocheChoche.src.Cochecoche;
+package Cochecoche;
 
 public class Coche {
 	
