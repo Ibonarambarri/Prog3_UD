@@ -2,10 +2,17 @@ package Cochecoche;
 
 public class Coche {
 	
-	public int velocidad = 0;
-	public int direction = 90;  
-	public double X = 0;
-	public double Y = 0;
+	public int velocidad;
+	public int direction;  
+	public double X;
+	public double Y;
+
+	public Coche() {
+		this.velocidad = 0;
+		this.direction = 90;
+		this.X = 0;
+		this.Y = 0;
+	}
 	
 	public int getVelocidad() {
 		return velocidad;

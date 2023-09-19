@@ -29,15 +29,17 @@ public class Ventana extends JFrame {
         coche_icon = new ImageIcon(coche_reesc);
         JLabel cocheL = new JLabel(coche_icon);
         
-        mainP.add(cocheL);
+    
         
         cocheL.setBounds(0, 0, 100, 100);
-        
+        cocheL.setVisible(true);
         buttP.setLayout(new FlowLayout(FlowLayout.CENTER));
         buttP.add(acelB);
         buttP.add(decelB);
         buttP.add(izqB);
         buttP.add(derB);
+
+        mainP.add(cocheL);
 
         acelB.addActionListener(e -> coche.incrementVelocidad());
 
