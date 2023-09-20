@@ -8,10 +8,10 @@ public class Coche {
 	public double Y;
 
 	public Coche() {
-		this.velocidad = 0;
+		this.velocidad = 10;
 		this.direction = 90;
-		this.X = 0;
-		this.Y = 0;
+		this.X = 100;
+		this.Y = 100;
 	}
 	
 	public int getVelocidad() {
@@ -31,25 +31,37 @@ public class Coche {
 	}
 	
 	public void incrementVelocidad() {
-		this.velocidad = this.velocidad + 1;
+		this.velocidad = this.velocidad + 5;
 	}
 	
 	public void desincrementVelocidad() {
-		this.velocidad = this.velocidad - 1;
+		this.velocidad = this.velocidad - 5;
 	}
 	
 	public void incrementAngulo() {
-		this.direction = this.direction + 1;
+		this.direction = this.direction + 5;
 	}
 	
 	public void desincrementAngulo() {
-		this.direction = this.direction - 1;
+		this.direction = this.direction - 5;
+	}
+
+	public double getPosX() {
+		return X;
+	}
+	public void setPosX(double X) {
+		this.X = X;
+	}
+	public double getPosY() {
+		return Y;
+	}
+	public void setPosY(double Y) {
+		this.Y = Y;
 	}
 	
-	void moverCoche() {
-        double radianes = Math.toRadians(direction);
-        this.X += this.velocidad * Math.cos(radianes);
-        this.Y += this.velocidad * Math.sin(radianes);
-    }
+	public void mueve( double tiempoDeMovimiento ) {
+		X = X + velocidad*tiempoDeMovimiento*Math.cos(Math.toRadians(direction));
+		Y = Y + velocidad*tiempoDeMovimiento*Math.sin(Math.toRadians(direction));
+	}
 
 }

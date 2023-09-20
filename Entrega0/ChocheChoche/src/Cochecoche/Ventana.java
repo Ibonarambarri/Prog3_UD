@@ -2,44 +2,34 @@ package Cochecoche;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.URL;
+
 
 public class Ventana extends JFrame {
+    
+    JPanel buttP = new JPanel();
+    JPanel mainP = new JPanel();
 
-    public Ventana(Coche coche) {
-        setSize(1000, 750);
+    public Ventana(Cochemove coche) {
+        setSize(800, 600);
         setLocationRelativeTo(null);
-        JPanel buttP = new JPanel();
-        JPanel mainP = new JPanel();
         
-        //mainP.setLayout(null);
         buttP.setBackground(Color.GRAY);
 
-        getContentPane().add(mainP, BorderLayout.NORTH);
+        add(mainP, BorderLayout.CENTER);
         getContentPane().add(buttP, BorderLayout.SOUTH);
 
         JButton acelB = new JButton("Acel");
         JButton decelB = new JButton("Decel");
         JButton izqB = new JButton("Izq");
         JButton derB = new JButton("Der");
-        
-        URL coche_url = getClass().getResource("coche.png");
-        ImageIcon coche_icon = new ImageIcon(coche_url);
-        Image coche_reesc = coche_icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
-        coche_icon = new ImageIcon(coche_reesc);
-        JLabel cocheL = new JLabel(coche_icon);
-        
     
-        
-        cocheL.setBounds(0, 0, 100, 100);
-        cocheL.setVisible(true);
         buttP.setLayout(new FlowLayout(FlowLayout.CENTER));
         buttP.add(acelB);
         buttP.add(decelB);
         buttP.add(izqB);
         buttP.add(derB);
 
-        mainP.add(cocheL);
+        mainP.add(coche.cocheL);
 
         acelB.addActionListener(e -> coche.incrementVelocidad());
 
